@@ -5,8 +5,11 @@ import tarefasRoutes from './routes/tarefas.js';
 
 const app = express();
 
-app.use(cors());
-app.use(express.json());
+var corsOptions = {
+  origin: ["https://tarefas-api-six.vercel.app/"],
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 app.use('/tarefas', tarefasRoutes);
 
