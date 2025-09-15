@@ -1,4 +1,3 @@
-import "dotenv/config";
 import cors from 'cors';
 import express from "express";
 import tarefasRoutes from './routes/tarefas.js';
@@ -6,7 +5,7 @@ import tarefasRoutes from './routes/tarefas.js';
 const app = express();
 
 var corsOptions = {
-  origin: ["https://tarefas-api-six.vercel.app/"],
+  origin: ["*", "http://localhost:3000", "https://api-tarefas-blue.vercel.app/"],
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
