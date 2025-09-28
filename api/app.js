@@ -3,11 +3,13 @@ import express from "express";
 import tarefasRoutes from './routes/tarefasRoutes.js';
 
 const app = express();
+app.use(express.json());
 
 var corsOptions = {
-  origin: ["*", "http://localhost:3000", "https://api-tarefas-ch9v9t2ir-elyys-projects.vercel.app/",],
+  origin: ["*", "http://localhost:3000", "https://api-tarefas-ch9v9t2ir-elyys-projects.vercel.app/"],
   optionsSuccessStatus: 200,
 };
+
 app.use(cors(corsOptions));
 
 app.use('/tarefas', tarefasRoutes);
